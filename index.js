@@ -98,20 +98,17 @@ function criarTarefa() {
 }
 
 function deletarTarefa(id){
-
     if(confirm("Deseja realmente apagar?")){
-        fetch(`https://js-lista-de-tarefas-api.onrender.com/tarefas/${id}`, {
+        fetch(`https://js-lista-de-tarefas-api.onrender.com/tarefas/${id}`,{
             method: "delete",
             headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(dados)
+                "Content-type": "application/json"
+            }
         })
-            .then(resposta => resposta.json())
-            .then(json => {
-                alert(json.mensagem);
-                buscarTarefas();
-            })
+        .then(resposta => resposta.json())
+        .then(json => {
+            alert(json.mensagem);
+            buscarTarefas();
+        })
     }
-
 }
