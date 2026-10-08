@@ -17,7 +17,7 @@
     <main class="p-15 bg-slate-200">
         <h1 class="text-3x1 font-bold mb-6">Tarefas</h1>
         <div id="tarefas" class="grid grid-cols-3 gap-4">
-            <div class="bg-white p-4 rounded-lg">
+            <!--div class="bg-white p-4 rounded-lg">
                 <h3 class="font-bold mb-4">Título do card</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tempora officiis ex veniam alias soluta asperiores libero doloremque expedita consectetur ipsa pariatur suscipit, quibusdam iure dolor sequi officia eaque repellendus!</p>
 
@@ -29,7 +29,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tempora officiis ex veniam alias soluta asperiores libero doloremque expedita consectetur ipsa pariatur suscipit, quibusdam iure dolor sequi officia eaque repellendus!</p>
 
 
-            </div>
+            </div-->
 
         </div>
         <div onclick="fecharFormCriar()" id="overlay" class="w-full h-screen bg-black/70 fixed top-0 left-0 invisible duration-200 opacity-0"></div>
@@ -39,12 +39,12 @@
             </div>
             
             
-            <form class="flex flex-col">
+            <form onsubmit="criarTarefa()" class="flex flex-col">
                 <label for="titulo" class="uppercase text-xs font-bold mb-2 block">Título</label>
                 <input id="titulo" type="text" placeholder="Título da Tarefa" class="pl-3 h-10 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4" required />
                 <label for="descricao" class="uppercase text-xs font-bold mb-2 block">Descrição</label>
                 <textarea id="descricao" class="pl-3 h-30 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4" required></textarea>
-                <button type="submit" class="w-full h-10 rounded bg-purple-400 hover:bg-purple-600 duration-200 hover:text-white font-bold">Logar</button>
+                <button  type="submit" class="w-full h-10 rounded bg-purple-400 hover:bg-purple-600 duration-200 hover:text-white font-bold">Logar</button>
 
 
             </form>
