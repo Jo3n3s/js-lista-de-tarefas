@@ -154,7 +154,18 @@ function editarTarefa(){
 
 } 
 
+function pesquisarTarefa(palavra){
 
+    if (palavra.length == 0){
+        carregarTarefas(tarefas)
+        return;
+    }
+    if(palavra.length >= 3){
+        let tarefasFiltradas = tarefas.filter(tarefa => tarefa.titulo.toLowerCase().includes(palavra.toLowerCase()))
+        carregarTarefas(tarefasFiltradas);
+    }
+
+}
 
 function deletarTarefa(id){
     if(confirm("Deseja realmente apagar?")){

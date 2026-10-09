@@ -9,7 +9,8 @@
 </head>
 <body>
     <header class="flex justify-between items-center py-4 px-15 bg-indigo-600">
-        <input type="text" placeholder="Pesquisar" class="w-100 h-10 pl-4 rounded bg-white" />
+        <input onkeyup="pesquisarTarefa(this.value)" type="text" placeholder="Pesquisar" class="w-100 h-10 pl-4 rounded bg-white" />
+        <!-- na função pesquisarTarefa(event.target.value ou this.value os dois vão funcionar -->
         <button onclick="abrirFormCriar()" class ="leading-10 bg-purple-800 rounded px-4 font-bold text-white duration-200 hover:bg-purple-400 hover:text-black">Nova Tarefa</button>
 
     </header>
