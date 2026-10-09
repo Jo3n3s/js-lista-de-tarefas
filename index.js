@@ -40,7 +40,7 @@ function carregarTarefas(listaTarefas) {
                     <h3 class="font-bold mb-4">${tarefa.titulo}</h3>
                     <p>${tarefa.descricao}</p>
                     <div class = "flex justify-end gap-3">
-                        <box-icon class="cursor-pointer hover:fill-purple-500" name="pencil"></box-icon>
+                        <box-icon onclick="abrirFormEditar(${tarefa.id})" class="cursor-pointer hover:fill-purple-500" name="pencil"></box-icon>
                         <box-icon onclick="deletarTarefa(${tarefa.id})" class="cursor-pointer hover:fill-purple-500" name="trash"></box-icon>
                     </div>
                 </div>
@@ -62,6 +62,28 @@ function fecharFormCriar() {
     let formCriar = document.querySelector("#form-criar");
     overlay.classList.add("opacity-0", "invisible");
     formCriar.classList.add("opacity-0", "invisible");
+}
+
+function abrirFormEditar(id) {
+    let overlay = document.querySelector("#overlay");
+    let formeditar = document.querySelector("#form-editar");
+    let idEdicao = document.querySelector("#idEdicao");
+    let tituloEdicao = document.querySelector("#tituloEdicao");
+    let descricaoEdicao = document.querySelector("#descricaoEdicao");
+    let tarefa = tarefas.find(tarefa => tarefa.id == id);
+    idEdicao.value = tarefa.id;
+    tituloEdicao.value = tarefa.titulo;
+    descricaoEdicao.value = tarefa.descricao;
+
+    overlay.classList.remove("opacity-0", "invisible");
+    formeditar.classList.remove("opacity-0", "invisible");
+}
+
+function fecharFormEditar() {
+    let overlay = document.querySelector("#overlay");
+    let formeditar = document.querySelector("#form-editar");
+    overlay.classList.add("opacity-0", "invisible");
+    formeditar.classList.add("opacity-0", "invisible");
 }
 
 function criarTarefa() {

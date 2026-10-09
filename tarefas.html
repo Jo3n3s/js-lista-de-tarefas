@@ -32,7 +32,7 @@
             </div-->
 
         </div>
-        <div onclick="fecharFormCriar()" id="overlay" class="w-full h-screen bg-black/70 fixed top-0 left-0 invisible duration-200 opacity-0"></div>
+        <div onclick="fecharFormCriar(), fecharFormEditar()" id="overlay" class="w-full h-screen bg-black/70 fixed top-0 left-0 invisible duration-200 opacity-0"></div>
         <div id="form-criar" class="w-100 p-4 rounded-lg bg-white fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 invisible duration-200">
             <div class="flex justify-end">
                 <box-icon onclick="fecharFormCriar()" name='x' class="cursor-pointer"></box-icon>
@@ -44,7 +44,24 @@
                 <input id="titulo" type="text" placeholder="Título da Tarefa" class="pl-3 h-10 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4" required />
                 <label for="descricao" class="uppercase text-xs font-bold mb-2 block">Descrição</label>
                 <textarea id="descricao" class="pl-3 h-30 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4" required></textarea>
-                <button  type="submit" class="w-full h-10 rounded bg-purple-400 hover:bg-purple-600 duration-200 hover:text-white font-bold">Logar</button>
+                <button  type="submit" class="w-full h-10 rounded bg-purple-400 hover:bg-purple-600 duration-200 hover:text-white font-bold">Cadastrar</button>
+
+
+            </form>
+        </div>
+        <div id="form-editar" class="w-100 p-4 rounded-lg bg-white fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 invisible duration-200">
+            <div class="flex justify-end">
+                <box-icon onclick="fecharFormEditar()" name='x' class="cursor-pointer"></box-icon>
+            </div>
+            
+            
+            <form onsubmit="editarTarefa()" class="flex flex-col">
+                <input type="hidden" id="idEdicao">
+                <label for="tituloEdicao" class="uppercase text-xs font-bold mb-2 block">Título</label>
+                <input id="tituloEdicao" type="text" placeholder="Título da Tarefa" class="pl-3 h-10 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4" required />
+                <label for="descricaoEdicao" class="uppercase text-xs font-bold mb-2 block">Descrição</label>
+                <textarea id="descricaoEdicao" class="pl-3 h-30 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4" required></textarea>
+                <button onclick="editarTarefa()" type="submit" class="w-full h-10 rounded bg-purple-400 hover:bg-purple-600 duration-200 hover:text-white font-bold">Salvar</button>
 
 
             </form>
